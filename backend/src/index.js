@@ -13,4 +13,5 @@ mongoose.connect('mongodb+srv://wiiki25:Wwiiki1507@cluster0-bzon1.mongodb.net/te
 app.use(cors())
 app.use(express.json())
 app.use(routes)
+console.log("[Backend] - Service started at port 3333")
 app.listen(3333)

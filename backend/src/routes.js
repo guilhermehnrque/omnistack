@@ -8,9 +8,15 @@ const routes = Router()
 // Route Params: request.params
 // Body: 
 
-// Cadastro de Dev - Pode demorar para responder
+routes.get('/', (req, res) => {
+    return res.json("Service started")
+})
+
+// Cadastro de Dev
 routes.post('/devs', DevController.store)
 routes.get('/devs', DevController.index)
+routes.put('/dev', DevController.update)
+routes.delete('/dev', DevController.delete)
 
 routes.get('/search', SearchController.index)
 

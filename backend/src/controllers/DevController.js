@@ -30,9 +30,42 @@ module.exports = {
         }
         return res.json(dev)
     },
-    async index(request, response){
+
+    async index(request, response) {
         const devs = await Dev.find()
 
         return response.json(devs)
+    },
+
+    async update(request, response) {
+        const { _id, techs, latitude, longitude, name, bio } = request.body
+        try {
+            let dev = await Dev.findByIdAndUpdate({ _id },
+                {
+                    techs,
+                    latitude,
+                    longitude,
+                    name,
+                    bio
+                }, { new: true })
+
+            return response.json(dev)
+        }
+        catch (err) {
+            return response.json(400)
+        }
+    },
+
+    async delete(request, response) {
+        const { _id } = request.body
+        try {
+            let dev = await Dev.findByIdAndDelete({ _id })
+
+            return response.json("User deleted")
+        }
+        catch (err) {
+            return response.json(400)
+        }
     }
+
 }
