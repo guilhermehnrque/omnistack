@@ -21,7 +21,7 @@ module.exports = (request, response, next) => {
             if (err) {
                 return response.status(401).json({ error: "Token invalid" })
             }
-            request.userId = decoded.id
+            request.userId = decoded.params.id
             return next()
         })
 
