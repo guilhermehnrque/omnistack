@@ -18,7 +18,7 @@ module.exports = {
                 type: 'Point',
                 coordinates: [longitude, latitude],
             }
-            // Cadastrar
+
             dev = await Dev.create({
                 github_username,
                 name,
