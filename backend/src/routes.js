@@ -1,9 +1,9 @@
 const { Router } = require('express')
-const DevController = require('./controllers/DevController')
-const SearchController = require('./controllers/SearchController')
-const AuthController = require('./controllers/AuthController')
-const UserscController = require('./controllers/UsersController')
-const authMiddleware = require('./middleware/auth')
+const DevController = require('./app/controllers/DevController')
+const SearchController = require('./app/controllers/SearchController')
+const AuthController = require('./app/controllers/AuthController')
+const UserscController = require('./app/controllers/UsersController')
+const authMiddleware = require('./app/middleware/auth')
 const routes = Router()
 
 // Tipos de Parâmetros
