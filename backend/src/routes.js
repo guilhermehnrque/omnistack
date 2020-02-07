@@ -4,6 +4,7 @@ const SearchController = require('./app/controllers/SearchController')
 const AuthController = require('./app/controllers/AuthController')
 const UserscController = require('./app/controllers/UsersController')
 const authMiddleware = require('./app/middleware/auth')
+
 const routes = Router()
 
 // Tipos de Parâmetros
@@ -26,6 +27,8 @@ routes.get('/search', SearchController.index)
 // User Routes
 routes.post('/auth/register', AuthController.store)
 routes.post('/auth/login', AuthController.authenticate)
+routes.post('/auth/forgot_password', AuthController.password_recovery)
+routes.post('/auth/reset_password', AuthController.reset_password)
 
 // Get all users
 routes.use(authMiddleware).get('/users', UserscController.index)
